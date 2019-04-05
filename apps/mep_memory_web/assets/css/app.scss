@@ -1,0 +1,40 @@
+@import "colors";
+@import "../node_modules/bulma/bulma";
+
+.page-header {
+  margin-top: 2em;
+  text-align: center;
+
+  img {
+    width: 700px;
+  }
+}
+
+.mep-column {
+  flex: none;
+  width: 10%;
+}
+
+.mep-card {
+  background: rgba($color-primary, 0.1);
+
+  .mepcontent {
+    padding: 0.5em 0.5em;
+  }
+
+  .meptitle {
+    font-size: 0.7em;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    text-overflow: ellipsis;
+    text-transform: capitalize;
+    top: -3px;
+    white-space: nowrap;
+  }
+
+  .mepattribute {
+    margin-bottom: 0;
+  }
+}

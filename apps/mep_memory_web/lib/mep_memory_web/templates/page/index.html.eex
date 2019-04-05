@@ -1,0 +1,14 @@
+<div class="columns is-multiline">
+<%= for mep <- @meps do %>
+  <div class="column mep-column">
+    <div class="mep-card card" title="<%= mep.full_name %>">
+      <div class="card-image"><img src="<%= mep_image_url(mep.mep_id) %>" alt="<%= mep.full_name %>"></div>
+      <div class="mepcontent">
+        <p class="meptitle"><%= mep.full_name %></p>
+        <p class="mepattribute"><i class="fab fa-twitter"></i> <%= mep_twitter_follower(mep) %></p>
+        <p class="mepattribute"><i class="fas fa-heart"></i> <%= mep_twitter_likes(mep) %></p>
+      </div>
+    </div>
+  </div>
+<% end %>
+</div>
