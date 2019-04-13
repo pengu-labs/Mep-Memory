@@ -1,3 +1,7 @@
+<div class="filter-options">
+  <a class="button is-primary" href="/?order=followers">Rank by Followers</a>
+  <a class="button is-primary" href="/?order=likes">Rank by Likes</a>
+</div>
 <div class="columns is-multiline">
 <%= for mep <- @meps do %>
   <div class="column mep-column">

@@ -2,7 +2,8 @@ defmodule MepMemory do
   alias MepMemory.Repo
 
   def list_meps do
-    Repo.all(MepMemory.Mep) |> Repo.preload(:mep_contacts)
+    Repo.all(MepMemory.Mep)
+    |> Repo.preload(:mep_contacts)
   end
 
   def twitter_contact(mep) do
