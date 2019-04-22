@@ -1,0 +1,13 @@
+<header class="hero page-header">
+  <a class="hero-body" href="/">
+    <img src="/images/logo.png">
+    <h2 class="subtitle">
+      <i>All <b>M</b>embers of the <b>E</b>uropean <b>P</b>arliament on one page!</i>
+    </h2>
+  </a>
+</header>
+<div class="container filter-options">
+  <a class="button is-danger" href="/memory">Play Memory</a>
+  <a class="button is-primary" href="/?order=followers">Rank by Followers</a>
+  <a class="button is-primary" href="/?order=likes">Rank by Likes</a>
+</div>

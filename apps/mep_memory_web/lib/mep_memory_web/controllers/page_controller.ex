@@ -1,5 +1,6 @@
 defmodule MepMemoryWeb.PageController do
   use MepMemoryWeb, :controller
+  alias Phoenix.LiveView
 
   def index(conn, %{"order" => "followers"}) do
     render(conn, "index.html", meps: MepMemory.list_meps() |> sort_by_followers |> Enum.take(50))
@@ -11,6 +12,10 @@ defmodule MepMemoryWeb.PageController do
 
   def index(conn, _params) do
     render(conn, "index.html", meps: MepMemory.list_meps() |> Enum.take_random(50))
+  end
+
+  def memory(conn, _params) do
+    LiveView.Controller.live_render(conn, MepMemoryWeb.MemoryGameView, session: %{})
   end
 
   defp sort_by_followers(meps) do

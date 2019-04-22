@@ -1,0 +1,34 @@
+<div class="columns is-multiline">
+<%= for mep <- @game.meps do %>
+  <div class="column mep-column">
+    <div class="card flip-box" phx-click="toggle_card" phx-value="<%= mep.position %>">
+      <div class="flip-box-inner <%= if mep.revealed do "is-revealed" end %>">
+        <div class="flip-box-back">
+          <img class="image back <%= if mep.has_match do "is-matched" end %>" src="<%= mep_image_url(mep.mep_id) %>" alt="<%= mep.full_name %>">
+        </div>
+        <div class="flip-box-front">
+          <img class="" src="/images/hidden-card.jpg" alt="revealed">
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+</div>
+
+<%= if @game.matched_pair do %>
+<div class="modal is-active">
+  <div class="modal-background"></div>
+  <div class="card match-card">
+    <section class="card-content">
+      <h1 class="title is-3">Congratulations!</h1>
+      <p>You found <b><%= @game.matched_pair.full_name %></b></p>
+      <img src="<%= mep_image_url(@game.matched_pair.mep_id) %>" alt="<%= @game.matched_pair.full_name %>">
+    </section>
+    <footer class="card-footer">
+      <div class="card-footer-item">
+        <button class="button is-success" phx-click="close_dialog">Cool</button>
+      </div>
+    </footer>
+  </div>
+</div>
+<% end %>

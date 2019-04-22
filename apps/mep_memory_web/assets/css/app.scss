@@ -1,6 +1,8 @@
 @import "colors";
 @import "../node_modules/bulma/bulma";
 
+@import "match_card";
+
 .page-header {
   margin-top: 2em;
   text-align: center;
@@ -40,5 +42,41 @@
 
   .mepattribute {
     margin-bottom: 0;
+  }
+}
+
+.flip-box {
+  background-color: transparent;
+  width: 113px;
+  height: 142px;
+  perspective: 600px;
+  cursor: pointer;
+
+  .flip-box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+
+    &.is-revealed {
+      transform: rotateY(180deg);
+    }
+  }
+
+  .is-matched {
+    filter: grayscale(100%);
+  }
+
+  .flip-box-front,
+  .flip-box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+
+  .flip-box-back {
+    transform: rotateY(180deg);
   }
 }
