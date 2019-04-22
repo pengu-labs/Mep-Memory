@@ -1,6 +1,8 @@
 defmodule MepMemory.Feed.SocialMedia do
   alias MepMemory.Repo
 
+  import MepMemory.Feed.SocialMediaTypes
+
   def save_follower(mep_id) do
     mep = Repo.get_by(MepMemory.Mep, mep_id: mep_id) |> Repo.preload(:mep_contacts)
 
@@ -9,7 +11,7 @@ defmodule MepMemory.Feed.SocialMedia do
     end)
   end
 
-  defp fetch_follower(%{type: "Twitter Profile", contact: contact} = mep_contact) do
+  defp fetch_follower(%{type: twitter(), contact: contact} = mep_contact) do
     case request(contact) do
       nil ->
         nil
