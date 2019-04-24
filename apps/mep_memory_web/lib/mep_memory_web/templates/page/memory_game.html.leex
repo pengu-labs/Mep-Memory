@@ -6,9 +6,7 @@
         <div class="flip-box-back">
           <img class="image back <%= if mep.has_match do "is-matched" end %>" src="<%= mep_image_url(mep.mep_id) %>" alt="<%= mep.full_name %>">
         </div>
-        <div class="flip-box-front">
-          <img class="" src="/images/hidden-card.jpg" alt="revealed">
-        </div>
+        <img class="flip-box-front" src="/images/hidden-card.jpg" alt="revealed">
       </div>
     </div>
   </div>

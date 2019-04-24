@@ -21,6 +21,15 @@ defmodule MepMemory.Game.Memory do
   def toggle_mep(%{meps: meps} = game, position) do
     position = String.to_integer(position)
     selected = selected_mep(meps)
+
+    handle_toggle(game, position, selected)
+  end
+
+  defp handle_toggle(game, position, %{position: selected_position})
+       when position == selected_position,
+       do: game
+
+  defp handle_toggle(%{meps: meps} = game, position, selected) do
     toggled = toggled_mep(meps, position)
     meps = toggle(meps, position)
 
