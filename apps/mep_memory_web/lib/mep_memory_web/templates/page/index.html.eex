@@ -1,6 +1,6 @@
-<div class="columns is-multiline">
+<div class="columns is-mobile is-multiline">
 <%= for mep <- @meps do %>
-  <div class="column mep-column">
+  <div class="column mep-column is-4-mobile is-2-tablet">
     <div class="mep-card card" title="<%= mep.full_name %>">
       <div class="card-image"><img src="<%= mep_image_url(mep.mep_id) %>" alt="<%= mep.full_name %>"></div>
       <div class="mepcontent">

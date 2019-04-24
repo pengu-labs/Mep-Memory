@@ -3,6 +3,10 @@
 
 @import "match_card";
 
+body {
+  padding: 0 1em;
+}
+
 .page-header {
   margin-top: 2em;
   text-align: center;
@@ -16,9 +20,16 @@
   margin-bottom: 1em;
 }
 
-.mep-column {
-  flex: none;
-  width: 10%;
+@media screen and (min-width: 1000px) {
+  .mep-column {
+    flex: none;
+    width: 10% !important;
+  }
+}
+
+.card-column {
+  display: inline-block;
+  margin: 0 0.5em 0.5em 0;
 }
 
 .mep-card {
